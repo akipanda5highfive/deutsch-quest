@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#0b0f16">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Deutsch Fight">
-<title>Deutsch Fight Academy</title>
+<meta name="apple-mobile-web-app-title" content="Deutsch Academy">
+<title>Deutsch Academy</title>
 <style>
 :root{
   --navy:#17365d; --blue:#2f67a8; --sky:#dff3ff; --mint:#bcebdc;
@@ -109,40 +109,38 @@ select,input[type=number]{width:100%;border:2px solid #dbeaf6;background:white;b
 
 </style>
 
-<style id="fight-theme">
+<style id="academy-theme">
 :root{
-  --navy:#10151d;--blue:#405164;--sky:#222c38;--mint:#91a0ad;
-  --cream:#0c1118;--ink:#eef2f5;--muted:#9ba8b5;--white:#fff;
-  --good:#35c879;--bad:#ff5b5b;--gold:#e7b94f;--shadow:0 16px 38px rgba(0,0,0,.42);
+  --navy:#0a1324;--blue:#1f3b67;--sky:#17263e;--mint:#9cb8ae;
+  --cream:#080d16;--ink:#f4f1e8;--muted:#a9b0bc;--white:#fff;
+  --good:#49d59a;--bad:#ff7171;--gold:#d9b45b;--gold2:#f5df9b;
+  --shadow:0 18px 44px rgba(0,0,0,.42);
 }
 html,body{color:var(--ink);background:
-linear-gradient(135deg,rgba(255,255,255,.025) 25%,transparent 25%) 0 0/34px 34px,
-linear-gradient(225deg,rgba(255,255,255,.02) 25%,transparent 25%) 0 0/34px 34px,
-radial-gradient(circle at 50% -10%,#2b3541 0,#111821 42%,#080c12 100%);}
-.app{max-width:860px}
-.topbar{padding:5px 2px}.brand h1{color:#f4f6f8;text-transform:uppercase;letter-spacing:.045em;font-style:italic}.brand small{color:#9eabb6}
-.logo{border-radius:9px;background:linear-gradient(145deg,#e6e9ec,#707b86 42%,#171d24 43%,#070a0e);border:1px solid #aeb6bd;color:white;transform:skew(-7deg);font-size:19px;text-shadow:0 2px 3px #000;box-shadow:0 0 0 3px #090d12,0 10px 24px rgba(0,0,0,.5)}
-.icon-btn,.exit{background:#171e27;color:#eef2f5;border:1px solid #3c4854;box-shadow:0 6px 18px rgba(0,0,0,.35)}
-.hero,.panel,.quiz-card,.result-card,.sentence-card{background:linear-gradient(160deg,rgba(31,39,49,.97),rgba(12,17,24,.97));border:1px solid #3c4651;border-radius:12px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-.hero:before,.quiz-card:before,.sentence-card:before,.result-card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#79838d,#fff,#59636d,#e7b94f,#59636d,#fff,#79838d)}
-.hero:after{width:300px;height:300px;right:-170px;top:-170px;background:radial-gradient(circle,rgba(231,185,79,.13),transparent 66%)}
-.fight-emblem{display:flex;align-items:center;justify-content:center;gap:14px;margin:4px 0 13px;position:relative;z-index:1}
-.glove{font-size:52px;filter:grayscale(1) contrast(1.25) drop-shadow(0 7px 5px #000);transform:rotate(-18deg)}.glove.mirror{transform:scaleX(-1) rotate(-18deg)}
-.belt{min-width:150px;padding:10px 17px;background:linear-gradient(#11161d,#020305);border:3px solid #88929c;outline:3px solid #090c10;color:#e8edf0;font-weight:950;letter-spacing:.13em;text-align:center;line-height:1.05;transform:skew(-6deg);box-shadow:0 9px 18px #000;font-size:13px}.belt span{font-size:27px;color:#e7b94f}
-.rank-strip{display:flex;align-items:center;justify-content:center;gap:10px;font-size:10px;letter-spacing:.12em;font-weight:900;color:#aab4bd;margin-bottom:11px}.rank-strip i{width:70px;height:5px;background:linear-gradient(90deg,#eee,#e7b94f,#111);border-radius:8px}
-.hero h2{color:#fff;text-transform:uppercase;font-style:italic;letter-spacing:.02em}.hero p{color:#aeb8c1}
-.stats{position:relative;z-index:1}.stat,.field,.result-cell,.sentence-stat{background:linear-gradient(145deg,#202936,#111720);border:1px solid #34404c;border-radius:8px}.stat b,.sentence-stat b{color:#e7b94f}.stat span,label,.small-note{color:#a6b1bb}
-select,input[type=number]{background:#0d131a;color:#f2f5f7;border-color:#44505d;border-radius:7px}.segment button{background:#121922;color:#aab4bd;border-color:#3c4854;border-radius:7px}.segment button.active{background:linear-gradient(135deg,#e7b94f,#9b711c);border-color:#f0ca67;color:#090b0e}
-.mode-card{border-radius:9px!important;background:linear-gradient(145deg,#222c37,#0d131a)!important;border:1px solid #46515d!important;color:#f1f4f6!important;box-shadow:0 7px 0 #05070a!important}.mode-card strong{color:#fff}.mode-card span{color:#aab4bd!important}.mode-card.sentence{background:linear-gradient(145deg,#31291a,#12100b)!important;border-color:#756231!important}
-.primary,.next,.s-main{background:linear-gradient(135deg,#e7b94f,#9a701d);color:#080a0d;border-radius:8px;box-shadow:0 7px 0 #4c350b;text-transform:uppercase;letter-spacing:.04em}.primary:active{box-shadow:0 3px 0 #4c350b}
-.secondary,.s-sub{background:#202a35;color:#eef2f5;border:1px solid #45515d;border-radius:8px}.unknown{background:#121922;color:#aab4bd;border-color:#596572;border-radius:8px}.mark-again,.s-review{background:#342b17;color:#f1c85c;border:1px solid #6d5825;border-radius:8px}
-.quiz-head{background:rgba(8,12,18,.94);border:1px solid #303a45;border-radius:8px}.progress{background:#202934}.progress i{background:linear-gradient(90deg,#6d7680,#e7b94f,#f7dc8b)}
-.badge{background:#232d38;color:#d7dde2;border:1px solid #46515d;border-radius:5px}.prompt,.sentence-ja{color:#fff;text-shadow:0 3px 8px #000}.reading{color:#9ba8b5}.speak{background:#202a35;border:1px solid #485460}
-.option{background:linear-gradient(145deg,#202936,#111720);border-color:#3b4753;color:#edf1f4;border-radius:8px;box-shadow:0 4px 0 #080b0f}.option.correct{background:#103822;border-color:#35c879;color:#8bf0b5}.option.wrong{background:#3c1517;border-color:#ff5b5b;color:#ffaaaa}
-.feedback{background:#151d26;border:1px solid #34404b;border-radius:8px}.feedback.good{background:#103421;color:#78eaa5}.feedback.bad{background:#3a2015;color:#ffb07c}
-.sentence-answer{background:#0b1118;border-color:#5e6a76;border-radius:8px}.s-token{background:linear-gradient(145deg,#364351,#1b242e);color:#f0f3f5;border:1px solid #53606d;border-radius:7px;box-shadow:0 4px 0 #090d12}.sentence-answer .s-token{background:linear-gradient(135deg,#e7b94f,#9b711c);color:#090b0e;box-shadow:0 4px 0 #4d360b}
-.result-card .medal{filter:grayscale(.45)}.bigscore{color:#e7b94f}.list{background:#0e141b}.list-item{border-color:#313b46}
-@media(max-width:560px){.glove{font-size:40px}.belt{min-width:125px}.belt span{font-size:23px}.fight-emblem{gap:7px}.brand h1{font-size:19px}}
+ radial-gradient(circle at 15% 0%,rgba(31,59,103,.45),transparent 32%),
+ radial-gradient(circle at 88% 8%,rgba(217,180,91,.12),transparent 27%),
+ linear-gradient(150deg,#050912 0%,#0a1220 52%,#070b12 100%);}
+.app{max-width:880px}
+.topbar{padding:7px 3px}.brand h1{color:#fff;letter-spacing:.035em;font-family:Georgia,"Yu Mincho",serif}.brand small{color:#b6bdc8}
+.logo{border-radius:50%;background:radial-gradient(circle at 34% 28%,#f8e7ae,#d6ae4f 42%,#73531a 72%,#241707);border:2px solid #f3d989;color:#0a101a;transform:none;font-family:Georgia,serif;font-size:20px;box-shadow:0 0 0 4px #0a111d,0 0 0 5px #69501f,0 12px 28px rgba(0,0,0,.5)}
+.icon-btn,.exit{background:#101a2a;color:#f4ead0;border:1px solid #40506a;box-shadow:0 7px 20px rgba(0,0,0,.32)}
+.hero,.panel,.quiz-card,.result-card,.sentence-card{background:linear-gradient(160deg,rgba(18,29,47,.98),rgba(7,12,21,.98));border:1px solid #3e4d64;border-radius:20px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero:before,.quiz-card:before,.sentence-card:before,.result-card:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,transparent,#c59a3b,#f3dfa3,#c59a3b,transparent)}
+.hero:after{width:320px;height:320px;right:-180px;top:-180px;background:radial-gradient(circle,rgba(217,180,91,.14),transparent 67%)}
+.academy-emblem{display:flex;justify-content:center;margin:4px 0 14px;position:relative;z-index:1}.crest{width:230px;min-height:112px;display:flex;flex-direction:column;align-items:center;justify-content:center;clip-path:polygon(50% 0,94% 18%,88% 74%,50% 100%,12% 74%,6% 18%);background:linear-gradient(145deg,#f4dfa0,#b8892f 46%,#69491a 100%);padding:9px;filter:drop-shadow(0 12px 13px rgba(0,0,0,.48))}.crest:before{content:"";position:absolute;inset:5px;clip-path:inherit;background:linear-gradient(160deg,#101b2e,#070c14)}.crest span,.crest small{position:relative;z-index:1}.crest span{font:700 45px/1 Georgia,serif;color:#edd38b;letter-spacing:.08em}.crest small{margin-top:7px;color:#d9c99c;font-size:10px;letter-spacing:.18em;font-weight:900}
+.rank-strip{display:flex;align-items:center;justify-content:center;gap:10px;font-size:10px;letter-spacing:.14em;font-weight:900;color:#b9c0ca;margin-bottom:12px}.rank-strip i{width:78px;height:3px;background:linear-gradient(90deg,#805f22,#f0d78f,#805f22);border-radius:8px}
+.hero h2{color:#fff}.hero p{color:#b7bec8}.stats{position:relative;z-index:1}.stat,.field,.result-cell,.sentence-stat{background:linear-gradient(145deg,#17243a,#0d1625);border:1px solid #34445c;border-radius:12px}.stat b,.sentence-stat b{color:#e6c975}.stat span,label,.small-note{color:#aeb7c4}
+select,input[type=number]{background:#0d1726;color:#fff;border-color:#53647b;border-radius:10px}.segment button{background:#101b2c;color:#b8c0ca;border-color:#3d4d64;border-radius:10px}.segment button.active{background:linear-gradient(135deg,#e5c86e,#a77c29);border-color:#f0d98f;color:#0a0e15}
+.mode-card{border-radius:14px!important;background:linear-gradient(145deg,#192942,#0d1727)!important;border:1px solid #495b73!important;color:#f3f5f7!important;box-shadow:0 7px 0 #050911!important}.mode-card:hover{transform:translateY(-1px);border-color:#d3af55!important}.mode-card strong{color:#fff}.mode-card span{color:#b5bdc8!important}.mode-card.sentence{background:linear-gradient(145deg,#2e2719,#12100b)!important;border-color:#7a6331!important}
+.primary,.next,.s-main{background:linear-gradient(135deg,#f0d88d,#c29336 55%,#8d641d);color:#090d14;border-radius:12px;box-shadow:0 7px 0 #50370c;letter-spacing:.025em}.primary:active{box-shadow:0 3px 0 #50370c}
+.secondary,.s-sub{background:#17243a;color:#f0f2f5;border:1px solid #455872;border-radius:11px}.unknown{background:#101a2b;color:#b9c1cc;border-color:#627189;border-radius:11px}.mark-again,.s-review{background:#332914;color:#f3d57d;border:1px solid #75602c;border-radius:11px}
+.quiz-head{background:rgba(6,10,17,.94);border:1px solid #334158;border-radius:12px}.progress{background:#1c293b}.progress i{background:linear-gradient(90deg,#536d92,#d6ad50,#f4df9e)}
+.badge{background:#17263d;color:#dce2e9;border:1px solid #445974;border-radius:20px}.prompt,.sentence-ja{color:#fff;text-shadow:0 3px 9px #000}.reading{color:#adb7c4}.speak{background:#17263c;border:1px solid #4b5d76;color:#fff}
+.option{background:linear-gradient(145deg,#192941,#0d1727);border-color:#3d506a;color:#f0f3f6;border-radius:12px;box-shadow:0 4px 0 #060a11}.option.correct{background:#103c2b;border-color:#49d59a;color:#9ff2ca}.option.wrong{background:#40191c;border-color:#ff7171;color:#ffc0c0}
+.feedback{background:#111c2c;border:1px solid #384a62;border-radius:12px}.feedback.good{background:#103728;color:#91ebc2}.feedback.bad{background:#3b2117;color:#ffc08e}
+.sentence-answer{background:#09111e;border-color:#60718a;border-radius:12px}.s-token{background:linear-gradient(145deg,#263a57,#15243a);color:#f2f4f6;border:1px solid #51637c;border-radius:10px;box-shadow:0 4px 0 #070b12}.sentence-answer .s-token{background:linear-gradient(135deg,#edda95,#b8892f);color:#090d14;box-shadow:0 4px 0 #5b3e0f}
+.bigscore{color:#e4c66c}.list{background:#0b1422}.list-item{border-color:#2d3d54}.combo-badge{background:linear-gradient(135deg,#3d3015,#171109);border-color:#b38b35;color:#f1d579}.combo-badge.hot{box-shadow:0 0 18px rgba(217,180,91,.38)}
+@media(max-width:560px){.brand h1{font-size:20px}.crest{width:190px;min-height:96px}.crest span{font-size:38px}.academy-emblem{margin-top:2px}}
 </style>
 
 <style id="answer-emphasis">
@@ -184,20 +182,20 @@ select option{background:#18222d;color:#fff}
 <body>
 <div class="app">
   <header class="topbar">
-    <div class="brand"><div class="logo">DF</div><div><h1>Deutsch Fight Academy</h1><small>語彙と文章を鍛えるドイツ語道場</small></div></div>
+    <div class="brand"><div class="logo">DA</div><div><h1>Deutsch Academy</h1><small>語彙と文章を、楽しく確実に。</small></div></div>
     <button class="icon-btn" id="soundToggle" aria-label="音のオンオフ">🔊</button>
   </header>
 
   <main id="home">
     <section class="hero">
-      <div class="fight-emblem" aria-label="格闘技エンブレム">
-        <div class="glove">🥊</div><div class="belt">DEUTSCH<br><span>FIGHT</span></div><div class="glove mirror">🥊</div>
+      <div class="academy-emblem" aria-label="Deutsch Academy エンブレム">
+        <div class="crest"><span>DA</span><small>DEUTSCH ACADEMY</small></div>
       </div>
-      <div class="rank-strip"><span>WHITE BELT</span><i></i><span>BLACK BELTを目指せ</span></div>
+      <div class="rank-strip"><span>BRONZE</span><i></i><span>MASTERを目指そう</span></div>
 
       <div class="mode-launch">
         <button class="mode-card" type="button" id="wordModeBtn">📘<strong>単語トレーニング</strong><span>4択で単語を覚える</span></button>
-        <button class="mode-card sentence" type="button" id="sentenceModeBtn">🥊<strong>文章コンボ</strong><span>日本語を見て文を作る</span></button>
+        <button class="mode-card sentence" type="button" id="sentenceModeBtn">✍️<strong>文章トレーニング</strong><span>日本語を見て文を組み立てる</span></button>
       </div>
       <div class="stats">
         <div class="stat"><b id="totalWords">0</b><span>収録語</span></div>
@@ -211,6 +209,7 @@ select option{background:#18222d;color:#fff}
             <option value="all">第1〜7課すべて</option>
             <option value="1">第1課</option><option value="2">第2課</option><option value="3">第3課</option>
             <option value="4">第4課</option><option value="5">第5課</option><option value="6">第6課</option><option value="7">第7課</option>
+            <option value="weak">弱点優先ランダム</option>
             <option value="review">まちがえた単語だけ</option>
           </select>
         </div>
@@ -236,8 +235,8 @@ select option{background:#18222d;color:#fff}
           </div>
         </div>
       </div>
-      <button class="primary" id="startBtn">ファイト開始</button>
-      <div class="small-note">成績と復習リストは、この端末のブラウザ内に保存されます。</div>
+      <button class="primary" id="startBtn">単語トレーニングを始める</button>
+      <div class="small-note">成績と復習リストは、この端末のブラウザ内に保存されます。全課ランダム・弱点優先にも対応しています。</div>
     </section>
   </main>
 
@@ -269,7 +268,7 @@ select option{background:#18222d;color:#fff}
   <main id="result" class="hidden">
     <section class="result-card">
       <div class="medal" id="medal">🏆</div>
-      <h2>ラウンド完了！</h2>
+      <h2>トレーニング完了！</h2>
       <div class="bigscore" id="finalRate">0%</div>
       <div class="result-grid">
         <div class="result-cell"><b id="finalCorrect">0</b><span>正解</span></div>
@@ -300,7 +299,7 @@ select option{background:#18222d;color:#fff}
         <select id="sOrder" aria-label="文章の出題方法"><option value="random">全体からランダム</option><option value="weak">弱点優先ランダム</option><option value="sequential">教材順</option><option value="mistakes">間違えた文だけ</option></select>
         <select id="sCount" aria-label="文章の問題数"><option value="10">10問</option><option value="20">20問</option><option value="30">30問</option><option value="50">50問</option><option value="all">全問</option></select>
       </div>
-      <div class="badges"><span class="badge" id="sLessonBadge"></span><span class="badge combo-badge" id="sComboBadge">🥊 COMBO ×0</span></div>
+      <div class="badges"><span class="badge" id="sLessonBadge"></span><span class="badge combo-badge" id="sComboBadge">STREAK ×0</span></div>
       <div class="sentence-ja" id="sJa"></div>
       <div class="sentence-answer" id="sAnswer"></div>
       <div class="sentence-bank" id="sBank"></div>
@@ -359,15 +358,22 @@ function speak(word){
   if(de)u.voice=de;
   speechSynthesis.speak(u);
 }
+function wordWeakShuffle(pool){
+  const review=new Set(storage.get("dq_review",[]));
+  const weak=pool.filter(w=>review.has(w.id));
+  const fresh=pool.filter(w=>!review.has(w.id));
+  return shuffle([...weak,...weak,...weak,...fresh]);
+}
 function start(customReview=false){
   let pool=WORDS;
   const selected=$("#lesson").value;
   const review=storage.get("dq_review",[]);
   if(customReview || selected==="review") pool=WORDS.filter(w=>review.includes(w.id));
+  else if(selected==="weak") pool=wordWeakShuffle(WORDS);
   else if(selected!=="all") pool=WORDS.filter(w=>String(w.lesson)===selected);
   if(!pool.length){alert("復習する単語がまだありません。まず通常の問題に挑戦してね。");return}
   let n=$("#count").value==="all"?pool.length:Math.min(Number($("#count").value),pool.length);
-  queue=shuffle(pool).slice(0,n); index=0; correct=0; answered=false; missedIds=new Set(); sessionAnswers=[];
+  queue=(selected==="weak"&&!customReview?pool:shuffle(pool)).slice(0,n); index=0; correct=0; answered=false; missedIds=new Set(); sessionAnswers=[];
   $("#home").classList.add("hidden");$("#result").classList.add("hidden");$("#quiz").classList.remove("hidden");
   renderQuestion();
 }
@@ -479,7 +485,7 @@ function sWeakShuffle(pool){
   // 弱点を約70%優先。弱点が少なければ残りは通常問題で補う。
   return sShuffle([...weak,...weak,...weak,...fresh]);
 }
-function sComboRank(n){return n>=50?'👑 MASTER':n>=20?'🥇 GOLD':n>=10?'🥈 SILVER':n>=5?'🥉 BRONZE':'🥊 COMBO'}
+function sComboRank(n){return n>=50?'MASTER':n>=25?'PLATINUM':n>=15?'GOLD':n>=8?'SILVER':n>=3?'BRONZE':'STREAK'}
 function sUpdateCombo(){let b=sq('#sComboBadge');b.textContent=`${sComboRank(sCombo)} ×${sCombo}`;b.classList.toggle('hot',sCombo>=5)}
 function sNorm(x){return x.toLocaleLowerCase('de-DE').replace(/[.,!?;:„“”‚‘’"]/g,"").replace(/\s+/g," ").trim()}
 function sTokenText(x){return x.toLocaleLowerCase('de-DE').replace(/[.,!?;:„“”‚‘’"]/g,"").replace(/\s+/g," ").trim()}
@@ -496,7 +502,7 @@ function sSpeak(text){if(!soundOn||!('speechSynthesis'in window))return;speechSy
 function sCheck(){if(sChecked)return;let item=sQueue[sIndex],ans=sNorm(sSelected.map(x=>x.text).join(' ')),fb=sq('#sFeedback');sChecked=true;if(ans===sNorm(item.de)){sState.correct++;sSessionCorrect++;sCombo++;sBestCombo=Math.max(sBestCombo,sCombo);sState.mistakes=sState.mistakes.filter(id=>id!==item.id);fb.className='sentence-feedback good';fb.innerHTML=`正解！ Sehr gut! 🎉<br><b>${item.de}</b>`}else{sState.wrong++;sSessionWrong++;sCombo=0;if(!sState.mistakes.includes(item.id))sState.mistakes.push(item.id);fb.className='sentence-feedback bad';fb.innerHTML=`おしい！<br>正解：<b>${item.de}</b>`}sUpdateCombo();sSave();sUpdateStats();sq('#sScoreMini').textContent=`正解 ${sSessionCorrect}`;sq('#sCheck').classList.add('hidden');sq('#sNext').classList.remove('hidden');setTimeout(()=>sSpeak(item.de),ans===sNorm(item.de)?160:320)}
 function sNext(){if(sIndex<sQueue.length-1){sIndex++;sRender()}else{sq('#sBar').style.width='100%';sq('#sJa').textContent='今日の練習はおしまい！';sq('#sAnswer').innerHTML='';sq('#sBank').innerHTML='';sq('#sFeedback').className='sentence-feedback good';sq('#sFeedback').innerHTML=`Gut gemacht! よくできました。<br>最高コンボ：<b>${sBestCombo}</b>`;sq('#sNext').classList.add('hidden')}}
 function sShow(){if(sChecked)return;let item=sQueue[sIndex];sSelected=[];sTokens=sMakeTokens(item);sSelected=sTokens.map((text,index)=>({text,index}));sDrawBank();sChecked=true;sState.wrong++;sSessionWrong++;sCombo=0;if(!sState.mistakes.includes(item.id))sState.mistakes.push(item.id);sSave();sUpdateStats();sUpdateCombo();sq('#sFeedback').className='sentence-feedback bad';sq('#sFeedback').innerHTML='正解：<b>'+item.de+'</b>';sq('#sCheck').classList.add('hidden');sq('#sNext').classList.remove('hidden');setTimeout(()=>sSpeak(item.de),250)}
-sq('#sentenceModeBtn').onclick=openSentence;sq('#wordModeBtn').onclick=()=>sq('#startBtn').scrollIntoView({behavior:'smooth',block:'center'});
+sq('#sentenceModeBtn').onclick=openSentence;sq('#wordModeBtn').onclick=()=>start(false);
 sq('#sExitBtn').onclick=()=>{sq('#sentenceQuiz').classList.add('hidden');sq('#home').classList.remove('hidden')};
 sq('#sUndo').onclick=()=>{if(!sChecked&&sSelected.length){sSelected.pop();sDrawBank()}};sq('#sClear').onclick=()=>{if(!sChecked){sSelected=[];sDrawBank()}};sq('#sCheck').onclick=sCheck;sq('#sNext').onclick=sNext;sq('#sShow').onclick=sShow;sq('#sMark').onclick=()=>{let id=sQueue[sIndex].id;if(!sState.mistakes.includes(id))sState.mistakes.push(id);sSave();sq('#sFeedback').className='sentence-feedback bad';sq('#sFeedback').textContent='復習リストに入れました。'};
 ['#sLesson','#sMode','#sOrder','#sCount'].forEach(id=>sq(id).onchange=sStart);sInitSelectors();sUpdateStats();
