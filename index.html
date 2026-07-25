@@ -144,6 +144,13 @@ select,input[type=number]{background:#0d131a;color:#f2f5f7;border-color:#44505d;
 .result-card .medal{filter:grayscale(.45)}.bigscore{color:#e7b94f}.list{background:#0e141b}.list-item{border-color:#313b46}
 @media(max-width:560px){.glove{font-size:40px}.belt{min-width:125px}.belt span{font-size:23px}.fight-emblem{gap:7px}.brand h1{font-size:19px}}
 </style>
+
+<style id="answer-emphasis">
+.feedback.good{font-size:clamp(25px,6vw,38px);font-weight:950;line-height:1.45;padding:20px 14px}
+.feedback.good b{display:block;font-size:clamp(30px,7vw,46px);margin-top:6px}
+.sentence-feedback.good{font-size:clamp(30px,7vw,46px)!important;font-weight:950;line-height:1.35;padding:18px 8px;min-height:84px}
+.sentence-feedback.bad{font-size:clamp(20px,5vw,30px);line-height:1.45}
+</style>
 </head>
 <body>
 <div class="app">
@@ -158,8 +165,6 @@ select,input[type=number]{background:#0d131a;color:#f2f5f7;border-color:#44505d;
         <div class="glove">🥊</div><div class="belt">DEUTSCH<br><span>FIGHT</span></div><div class="glove mirror">🥊</div>
       </div>
       <div class="rank-strip"><span>WHITE BELT</span><i></i><span>BLACK BELTを目指せ</span></div>
-      <h2>言葉を鍛えろ。文章で決めろ。</h2>
-      <p>単語トレーニングと文章コンボで、ドイツ語を仕上げよう。</p>
 
       <div class="mode-launch">
         <button class="mode-card" type="button" id="wordModeBtn">📘<strong>単語トレーニング</strong><span>4択で単語を覚える</span></button>
@@ -436,10 +441,11 @@ let sState=sStore.get();sState.mistakes=sState.mistakes||[];sState.correct=sStat
 let sQueue=[],sIndex=0,sSelected=[],sChecked=false,sTokens=[];
 const sq=s=>document.querySelector(s), sqa=s=>[...document.querySelectorAll(s)];
 function sShuffle(a){return [...a].sort(()=>Math.random()-.5)}
-function sNorm(x){return x.replace(/\s+/g," ").trim()}
+function sNorm(x){return x.toLocaleLowerCase('de-DE').replace(/[.,!?;:„“”‚‘’"]/g,"").replace(/\s+/g," ").trim()}
+function sTokenText(x){return x.toLocaleLowerCase('de-DE').replace(/[.,!?;:„“”‚‘’"]/g,"").replace(/\s+/g," ").trim()}
 function sSave(){sState.settings={lesson:sq('#sLesson').value,mode:sq('#sMode').value,order:sq('#sOrder').value,count:sq('#sCount').value};sStore.set(sState)}
 function sUpdateStats(){sq('#sCorrect').textContent=sState.correct;sq('#sWrong').textContent=sState.wrong;let t=sState.correct+sState.wrong;sq('#sRate').textContent=t?Math.round(sState.correct/t*100)+'%':'0%'}
-function sMakeTokens(item){return sq('#sMode').value==='easy'?[...item.chunks]:(item.de.match(/[^\s]+/g)||[])}
+function sMakeTokens(item){let raw=sq('#sMode').value==='easy'?[...item.chunks]:(item.de.match(/[^\s]+/g)||[]);return raw.map(sTokenText).filter(Boolean)}
 function sInitSelectors(){let ls=['すべての課',...new Set(SENTENCE_DATA.map(x=>x.lesson))];sq('#sLesson').innerHTML=ls.map(x=>`<option>${x}</option>`).join('');let st=sState.settings;sq('#sLesson').value=st.lesson||'すべての課';sq('#sMode').value=st.mode||'easy';sq('#sOrder').value=st.order||'random';sq('#sCount').value=st.count||'10'}
 function openSentence(){sq('#home').classList.add('hidden');sq('#quiz').classList.add('hidden');sq('#result').classList.add('hidden');sq('#sentenceQuiz').classList.remove('hidden');sStart()}
 function sStart(){let pool=[...SENTENCE_DATA];let lesson=sq('#sLesson').value;if(lesson!=='すべての課')pool=pool.filter(x=>x.lesson===lesson);if(sq('#sOrder').value==='mistakes')pool=pool.filter(x=>sState.mistakes.includes(x.id));if(sq('#sOrder').value==='random')pool=sShuffle(pool);let n=sq('#sCount').value==='all'?pool.length:Number(sq('#sCount').value);sQueue=pool.slice(0,n);sIndex=0;sSave();if(!sQueue.length){alert('復習する文章がまだありません。');sq('#sOrder').value='random';return sStart()}sRender()}
