@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#17365d">
+<meta name="theme-color" content="#0b0f16">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Deutsch Quest">
-<title>Deutsch Quest - ドイツ語単語</title>
+<meta name="apple-mobile-web-app-title" content="Deutsch Fight">
+<title>Deutsch Fight Academy</title>
 <style>
 :root{
   --navy:#17365d; --blue:#2f67a8; --sky:#dff3ff; --mint:#bcebdc;
@@ -108,25 +108,62 @@ select,input[type=number]{width:100%;border:2px solid #dbeaf6;background:white;b
 @media(max-width:560px){.mode-launch{grid-template-columns:1fr}.sentence-controls{grid-template-columns:1fr}.sentence-card{min-height:calc(100vh - 105px);padding:14px}.s-token{font-size:16px}}
 
 </style>
+
+<style id="fight-theme">
+:root{
+  --navy:#10151d;--blue:#405164;--sky:#222c38;--mint:#91a0ad;
+  --cream:#0c1118;--ink:#eef2f5;--muted:#9ba8b5;--white:#fff;
+  --good:#35c879;--bad:#ff5b5b;--gold:#e7b94f;--shadow:0 16px 38px rgba(0,0,0,.42);
+}
+html,body{color:var(--ink);background:
+linear-gradient(135deg,rgba(255,255,255,.025) 25%,transparent 25%) 0 0/34px 34px,
+linear-gradient(225deg,rgba(255,255,255,.02) 25%,transparent 25%) 0 0/34px 34px,
+radial-gradient(circle at 50% -10%,#2b3541 0,#111821 42%,#080c12 100%);}
+.app{max-width:860px}
+.topbar{padding:5px 2px}.brand h1{color:#f4f6f8;text-transform:uppercase;letter-spacing:.045em;font-style:italic}.brand small{color:#9eabb6}
+.logo{border-radius:9px;background:linear-gradient(145deg,#e6e9ec,#707b86 42%,#171d24 43%,#070a0e);border:1px solid #aeb6bd;color:white;transform:skew(-7deg);font-size:19px;text-shadow:0 2px 3px #000;box-shadow:0 0 0 3px #090d12,0 10px 24px rgba(0,0,0,.5)}
+.icon-btn,.exit{background:#171e27;color:#eef2f5;border:1px solid #3c4854;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.hero,.panel,.quiz-card,.result-card,.sentence-card{background:linear-gradient(160deg,rgba(31,39,49,.97),rgba(12,17,24,.97));border:1px solid #3c4651;border-radius:12px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero:before,.quiz-card:before,.sentence-card:before,.result-card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#79838d,#fff,#59636d,#e7b94f,#59636d,#fff,#79838d)}
+.hero:after{width:300px;height:300px;right:-170px;top:-170px;background:radial-gradient(circle,rgba(231,185,79,.13),transparent 66%)}
+.fight-emblem{display:flex;align-items:center;justify-content:center;gap:14px;margin:4px 0 13px;position:relative;z-index:1}
+.glove{font-size:52px;filter:grayscale(1) contrast(1.25) drop-shadow(0 7px 5px #000);transform:rotate(-18deg)}.glove.mirror{transform:scaleX(-1) rotate(-18deg)}
+.belt{min-width:150px;padding:10px 17px;background:linear-gradient(#11161d,#020305);border:3px solid #88929c;outline:3px solid #090c10;color:#e8edf0;font-weight:950;letter-spacing:.13em;text-align:center;line-height:1.05;transform:skew(-6deg);box-shadow:0 9px 18px #000;font-size:13px}.belt span{font-size:27px;color:#e7b94f}
+.rank-strip{display:flex;align-items:center;justify-content:center;gap:10px;font-size:10px;letter-spacing:.12em;font-weight:900;color:#aab4bd;margin-bottom:11px}.rank-strip i{width:70px;height:5px;background:linear-gradient(90deg,#eee,#e7b94f,#111);border-radius:8px}
+.hero h2{color:#fff;text-transform:uppercase;font-style:italic;letter-spacing:.02em}.hero p{color:#aeb8c1}
+.stats{position:relative;z-index:1}.stat,.field,.result-cell,.sentence-stat{background:linear-gradient(145deg,#202936,#111720);border:1px solid #34404c;border-radius:8px}.stat b,.sentence-stat b{color:#e7b94f}.stat span,label,.small-note{color:#a6b1bb}
+select,input[type=number]{background:#0d131a;color:#f2f5f7;border-color:#44505d;border-radius:7px}.segment button{background:#121922;color:#aab4bd;border-color:#3c4854;border-radius:7px}.segment button.active{background:linear-gradient(135deg,#e7b94f,#9b711c);border-color:#f0ca67;color:#090b0e}
+.mode-card{border-radius:9px!important;background:linear-gradient(145deg,#222c37,#0d131a)!important;border:1px solid #46515d!important;color:#f1f4f6!important;box-shadow:0 7px 0 #05070a!important}.mode-card strong{color:#fff}.mode-card span{color:#aab4bd!important}.mode-card.sentence{background:linear-gradient(145deg,#31291a,#12100b)!important;border-color:#756231!important}
+.primary,.next,.s-main{background:linear-gradient(135deg,#e7b94f,#9a701d);color:#080a0d;border-radius:8px;box-shadow:0 7px 0 #4c350b;text-transform:uppercase;letter-spacing:.04em}.primary:active{box-shadow:0 3px 0 #4c350b}
+.secondary,.s-sub{background:#202a35;color:#eef2f5;border:1px solid #45515d;border-radius:8px}.unknown{background:#121922;color:#aab4bd;border-color:#596572;border-radius:8px}.mark-again,.s-review{background:#342b17;color:#f1c85c;border:1px solid #6d5825;border-radius:8px}
+.quiz-head{background:rgba(8,12,18,.94);border:1px solid #303a45;border-radius:8px}.progress{background:#202934}.progress i{background:linear-gradient(90deg,#6d7680,#e7b94f,#f7dc8b)}
+.badge{background:#232d38;color:#d7dde2;border:1px solid #46515d;border-radius:5px}.prompt,.sentence-ja{color:#fff;text-shadow:0 3px 8px #000}.reading{color:#9ba8b5}.speak{background:#202a35;border:1px solid #485460}
+.option{background:linear-gradient(145deg,#202936,#111720);border-color:#3b4753;color:#edf1f4;border-radius:8px;box-shadow:0 4px 0 #080b0f}.option.correct{background:#103822;border-color:#35c879;color:#8bf0b5}.option.wrong{background:#3c1517;border-color:#ff5b5b;color:#ffaaaa}
+.feedback{background:#151d26;border:1px solid #34404b;border-radius:8px}.feedback.good{background:#103421;color:#78eaa5}.feedback.bad{background:#3a2015;color:#ffb07c}
+.sentence-answer{background:#0b1118;border-color:#5e6a76;border-radius:8px}.s-token{background:linear-gradient(145deg,#364351,#1b242e);color:#f0f3f5;border:1px solid #53606d;border-radius:7px;box-shadow:0 4px 0 #090d12}.sentence-answer .s-token{background:linear-gradient(135deg,#e7b94f,#9b711c);color:#090b0e;box-shadow:0 4px 0 #4d360b}
+.result-card .medal{filter:grayscale(.45)}.bigscore{color:#e7b94f}.list{background:#0e141b}.list-item{border-color:#313b46}
+@media(max-width:560px){.glove{font-size:40px}.belt{min-width:125px}.belt span{font-size:23px}.fight-emblem{gap:7px}.brand h1{font-size:19px}}
+</style>
 </head>
 <body>
 <div class="app">
   <header class="topbar">
-    <div class="brand"><div class="logo">D</div><div><h1>Deutsch Quest</h1><small>ドイツ語 単語トレーニング</small></div></div>
+    <div class="brand"><div class="logo">DF</div><div><h1>Deutsch Fight Academy</h1><small>語彙と文章を鍛えるドイツ語道場</small></div></div>
     <button class="icon-btn" id="soundToggle" aria-label="音のオンオフ">🔊</button>
   </header>
 
   <main id="home">
     <section class="hero">
-      <div class="mascots" aria-label="男の子向けマスコット">
-        <div class="character bear">🐻</div><div class="character fox">🦊</div><div class="character wolf">🐺</div>
+      <div class="fight-emblem" aria-label="格闘技エンブレム">
+        <div class="glove">🥊</div><div class="belt">DEUTSCH<br><span>FIGHT</span></div><div class="glove mirror">🥊</div>
       </div>
-      <h2>今日もひとつ、強くなる。</h2>
-      <p>第1〜7課の単語をゲーム感覚で覚えよう！</p>
+      <div class="rank-strip"><span>WHITE BELT</span><i></i><span>BLACK BELTを目指せ</span></div>
+      <h2>言葉を鍛えろ。文章で決めろ。</h2>
+      <p>単語トレーニングと文章コンボで、ドイツ語を仕上げよう。</p>
 
       <div class="mode-launch">
         <button class="mode-card" type="button" id="wordModeBtn">📘<strong>単語トレーニング</strong><span>4択で単語を覚える</span></button>
-        <button class="mode-card sentence" type="button" id="sentenceModeBtn">🧩<strong>文章並べ替え</strong><span>日本語を見て文を作る</span></button>
+        <button class="mode-card sentence" type="button" id="sentenceModeBtn">🥊<strong>文章コンボ</strong><span>日本語を見て文を作る</span></button>
       </div>
       <div class="stats">
         <div class="stat"><b id="totalWords">0</b><span>収録語</span></div>
@@ -165,7 +202,7 @@ select,input[type=number]{width:100%;border:2px solid #dbeaf6;background:white;b
           </div>
         </div>
       </div>
-      <button class="primary" id="startBtn">トレーニング開始</button>
+      <button class="primary" id="startBtn">ファイト開始</button>
       <div class="small-note">成績と復習リストは、この端末のブラウザ内に保存されます。</div>
     </section>
   </main>
@@ -198,7 +235,7 @@ select,input[type=number]{width:100%;border:2px solid #dbeaf6;background:white;b
   <main id="result" class="hidden">
     <section class="result-card">
       <div class="medal" id="medal">🏆</div>
-      <h2>トレーニング完了！</h2>
+      <h2>ラウンド完了！</h2>
       <div class="bigscore" id="finalRate">0%</div>
       <div class="result-grid">
         <div class="result-cell"><b id="finalCorrect">0</b><span>正解</span></div>
